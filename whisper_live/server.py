@@ -721,7 +721,7 @@ class ServeClientFasterWhisper(ServeClientBase):
         self.transcriber = WhisperModel(
             self.model_size_or_path,
             device=device,
-            compute_type="int8" if device == "cpu" else "float16",
+            compute_type="int8" if device == "cpu" else "float32",
             local_files_only=False,
         )
         self.use_vad = use_vad
